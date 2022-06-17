@@ -1,0 +1,7 @@
+.radios{
+    display: flex;
+    flex-direction: column;
+}
+.radio{
+    margin-top: 1rem
+}
