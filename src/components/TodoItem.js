@@ -4,7 +4,6 @@ import "./TodoItem.css"
 
 
 const TodoItem = ({todoArray, checkHandler}) => {
-    // console.log(todoArray)
 
   return todoArray.map(item=>(
     <div className='todoItem' key={item.id}>

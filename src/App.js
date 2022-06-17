@@ -20,18 +20,16 @@ function App() {
     }
   },[])
     useEffect(()=>{
-    if(todoArray.length>0){
+    if(todoArray && notFirstRun===true){
     localStorage.setItem("todos", JSON.stringify(todoArray))}
   },[todoArray])
   
-  
-
+  // handlers
   const addTodoHandler = todo =>{
     // check input's emptiness
     if(!todo.text || /^\s*$/.test(todo.text)){
       return;
     }
-
     const newTodoArray = [...todoArray,todo]
     setTodoArray(newTodoArray)
     setFilteredTodoArray(newTodoArray)
@@ -46,16 +44,20 @@ function App() {
       }
       return item
     })
+    setNotFirstRun(true)
     setChecker(prev=>!prev)
     setTodoArray(updatedtodoArrays)
     sortHandler()
   }
+
   // panel handlers
   const clearCompletedHandler=()=>{
+    setNotFirstRun(true)
     const remainingTasks = todoArray.filter(item=>item.completed===false)
     setTodoArray(remainingTasks)
     setFilteredTodoArray(remainingTasks)
     setRadioValue('All')
+    setChecker(prev=>!prev)
     sortHandler()
   }
 
@@ -66,25 +68,18 @@ function App() {
     if(value==='Active'){
       setRadioValue('Active')
       sortHandler()
-      // const activeList = todoArray.filter(item=>item.completed===false)
-      // setFilteredTodoArray(activeList)
     }
     else if(value==='Completed'){
       setRadioValue('Completed')
       sortHandler()
-      // const completedList = todoArray.filter(item=>item.completed===true)
-      // setFilteredTodoArray(completedList)
     }
     else{
       setRadioValue('All')
       sortHandler()
-      // setFilteredTodoArray(todoArray)
     }
-    
   }
 
   const sortHandler=()=>{
-    console.log(radioValue)
     if(radioValue==='Active'){
       const activeList = todoArray.filter(item=>item.completed===false)
       setFilteredTodoArray(activeList)
@@ -97,14 +92,12 @@ function App() {
       setFilteredTodoArray(todoArray)
     }
   }
-  console.log(checker,radioValue)
 
+  // updating list
   useEffect(()=>{
     if(notFirstRun)
       sortHandler()
   },[checker,radioValue])
-  // console.log(filteredtodoArray)
-  // console.log(todoArray,filteredtodoArray)
 
   return (
     <div className="App">

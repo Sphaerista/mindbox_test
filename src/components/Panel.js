@@ -3,10 +3,9 @@ import "./Panel.css"
 
 const Panel = ({todoArray, showHandler, clearCompletedHandler, radioValue}) => {
     const tasksLeft = todoArray.filter(item=>item.completed===false)
-    // console.log(tasksLeft)
 
   return (
-    <div>
+    <div className='container'>
         <p>{tasksLeft.length} {tasksLeft.length==1 ? 'task' : 'tasks'} left</p>
         <div className='radios'>
         <div className='radio'>
@@ -25,7 +24,7 @@ const Panel = ({todoArray, showHandler, clearCompletedHandler, radioValue}) => {
         <label htmlFor="displayChoice3">Completed</label>
         </div>
         </div>
-        <button onClick={clearCompletedHandler}>Clear Completed</button>
+        <button className='clear_btn' onClick={clearCompletedHandler}>Clear Completed</button>
     </div>
   )
 }
