@@ -1,10 +1,17 @@
 import React from 'react'
+import "./TodoItem.css"
 
-const TodoItem = ({id,text,completed}) => {
-    console.log(id,text,completed)
-  return (
-    <p>{text}</p>
-  )
+
+
+const TodoItem = ({todoArray, checkHandler}) => {
+    // console.log(todoArray)
+
+  return todoArray.map(item=>(
+    <div className='todoItem' key={item.id}>
+    <input type='checkbox' checked={item.completed} onChange={()=>checkHandler(item.id)} />
+    <p className={item.completed ? "todoItem-completed" : undefined}>{item.text}</p>
+    </div>
+  ))
 }
 
 export default TodoItem

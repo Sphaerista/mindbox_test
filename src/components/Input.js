@@ -9,6 +9,7 @@ const Input = (props) => {
             text: input,
             completed: false
         })
+        setInput('')
     }
   return (
     <div className='input'>
