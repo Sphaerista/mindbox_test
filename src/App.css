@@ -1,0 +1,10 @@
+.App{
+    margin: 1rem;
+}
+.todoList{
+    border-top: 1px solid rgb(126, 168, 252, 0.4);
+}
+
+h1{
+    text-align: center;
+}

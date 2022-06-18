@@ -7,8 +7,9 @@ const TodoItem = ({todoArray, checkHandler}) => {
 
   return todoArray.map(item=>(
     <div className='todoItem' key={item.id}>
-    <input type='checkbox' checked={item.completed} onChange={()=>checkHandler(item.id)} />
-    <p className={item.completed ? "todoItem-completed" : undefined}>{item.text}</p>
+    <input type='checkbox' className='rounded-checkbox' id='checkbox' checked={item.completed} onChange={()=>checkHandler(item.id)} />
+    <label for='checkbox'></label>
+    <div className={item.completed ? "todoItem-completed" : "todoItem-incomplete"}>{item.text}</div>
     </div>
   ))
 }

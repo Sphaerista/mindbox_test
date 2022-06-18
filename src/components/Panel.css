@@ -2,10 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.radios{
-    /* display: flex; */
-    /* flex-direction: column; */
+    margin-bottom: 1rem;
 }
 
 .radio {
@@ -51,4 +48,8 @@
   .clear_btn:active{
     background-color: rgb(241, 79, 79);
     color: aliceblue;
+  }
+
+  .text{
+    width: 8rem;
   }

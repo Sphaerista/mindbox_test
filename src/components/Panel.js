@@ -6,7 +6,7 @@ const Panel = ({todoArray, showHandler, clearCompletedHandler, radioValue}) => {
 
   return (
     <div className='container'>
-        <p>{tasksLeft.length} {tasksLeft.length==1 ? 'task' : 'tasks'} left</p>
+        <div className='text'>{tasksLeft.length} {tasksLeft.length==1 ? 'task' : 'tasks'} left</div>
         <div className='radios'>
         <div className='radio'>
         <input type="radio" id="displayChoice1"

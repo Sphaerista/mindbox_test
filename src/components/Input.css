@@ -1,0 +1,35 @@
+.input{
+  margin-bottom: 1rem;
+}
+
+.input input{
+    /* border-radius: 10px; */
+    padding: 0.5rem;
+    border: 1px solid rgb(219, 231, 255);
+    /* text-align: center;
+    width: 70%; */
+    transition: 0.3s;
+    outline: none;
+}
+
+.input button{
+    cursor: pointer;
+  transition: 0.2s;
+  padding: 0.5rem 1rem;
+  /* border-radius: 4px; */
+  border: 1px solid rgb(160, 190, 250);
+  background-color: aliceblue;
+  font-weight: bold;
+}
+
+.input button:hover {
+    background-color: rgb(219, 231, 255);
+    /* background-color: rgb(247, 78, 177, 0.3); */
+    /* color: black; */
+  }
+
+  .input button:active {
+    background-color: rgb(160, 190, 250);
+    border: 1px solid rgb(247, 78, 177);
+    color: white;
+  }
