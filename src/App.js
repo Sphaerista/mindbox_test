@@ -63,7 +63,6 @@ function App() {
 
   const showHandler=(e)=>{
     setNotFirstRun(true)
-    console.log(e.target.value)
     const value = e.target.value
     if(value==='Active'){
       setRadioValue('Active')
